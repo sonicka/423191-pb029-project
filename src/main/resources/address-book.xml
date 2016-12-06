@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<?xml-stylesheet type="text/xsl" href="addrssbook-to-html.xsl"?>
-<addressbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml-stylesheet href="addressbook-to-html.xsl" type="text/xsl"?>
+<addressbook title="adressbook"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="address-book.xsd">
 <person>
     <name>
