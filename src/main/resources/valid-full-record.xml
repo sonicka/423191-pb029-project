@@ -1,0 +1,26 @@
+<adressbook>
+    <person>
+        <name>
+            <firstname></firstname>
+            <middlename></middlename>
+            <lastname></lastname>
+        </name>
+        <contact>
+            <email></email>
+            <phonenumber></phonenumber>
+            <website></website>
+            <other>
+                <nameofservice></nameofservice>
+                <userid></userid>
+            </other>
+        </contact>
+        <adress>
+            <street></street>
+            <doornumber></doornumber>
+            <postalnumber></postalnumber>
+            <city></city>
+            <state></state>
+        </adress>
+        <notes></notes>
+    </person>
+</adressbook>
