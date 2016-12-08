@@ -12,7 +12,7 @@
     <xs:sequence>
       <xs:element name="street" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="doornumber" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="postalnumber" type="postalnumber" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="postalnumber" type="xs:int" minOccurs="1" maxOccurs="1"/>
       <xs:element name="city" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="state" type="xs:string" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
@@ -54,12 +54,6 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:simpleType name="postalnumber">
-    <xs:restriction base="xs:positiveInteger">
-      <xs:length value="5"/>
-    </xs:restriction>
-  </xs:simpleType>
-
   <xs:complexType name="phoneNumberType">
     <xs:simpleContent>
       <xs:extension base="number">
@@ -77,10 +71,10 @@
   </xs:simpleType>
 
   <xs:simpleType name="phoneAtt">
-      <xs:restriction>
-        <xs:enumeration value="personal"/>
-        <xs:enumeration value="work"/>
-        <xs:enumeration value="other"/>
+      <xs:restriction base="xs:string">
+          <xs:enumeration value="personal"/>
+          <xs:enumeration value="work"/>
+          <xs:enumeration value="other"/>
       </xs:restriction>
   </xs:simpleType>
 </xs:schema>
