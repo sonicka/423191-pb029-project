@@ -12,8 +12,10 @@
         <html>
             <head>
                 <style>
-
-                            #zahlavie {
+                        body {
+                            font-family: sans-serif
+                        }
+                        #head {
                             position: relative;
                             top: 0em;
                             min-width: 35em;
@@ -21,26 +23,60 @@
                             height: 5em;
                             margin: 0em auto;
                             padding: 1em;
-                            background-color: #000000;
+                            background-color: #223038;
                             color: #FFFFFF;
                         }
-                        #obsah {
+                        #content {
                             position: relative;
                             min-width: 35em;
                             max-width: 52em;
                             margin: 0em auto;
                             padding: 1em 0em;
-                            background-color: #FFF3E0;
+                            background-color: #E4F5FF;
                             color: #000000;
                         }
+                        #text {
+                            padding: 0em 1em;
+                        }
+                        a {
+                            color: #3F8588;
+                        }
+                        a:hover {
+                            color: #1BBEC5;
+                        }
+
+                        .person-name {
+                            background-color: #E6E1CF;
+                            color: #000000;
+                        }
+                        .person-background {
+                            padding: 0.5em 0.3em 0.3em 0.5em;
+                            background-color: #FFFFFF;
+                            color: #000000;
+                        }
+                        h2 {
+                            display: block;
+                            font-size: 1.5em;
+                            margin-top: 1em;
+                            margin-bottom: 0.5em;
+                            margin-left: 0;
+                            margin-right: 0;
+                            font-weight: bold;
+                        }
+                        .rowname {
+                            text-align: right;
+                            font-size: 1.2em;
+                            font-weight: bold;
+                        }
+
 
                 </style>
             </head>
             <body>
-                <div id="zahlavie">
-                    <h1><xsl:value-of select="@title"/></h1>
+                <div id="head">
+                    <h1>Address Book</h1>
                 </div>
-                <div id="obsah">
+                <div id="content">
                     <div id="text">
                         <xsl:apply-templates select="*">
                             <xsl:sort select="name/lastname"/>
@@ -53,40 +89,58 @@
 
     <xsl:template match="person">
         <xsl:apply-templates select="name"/>
-        <div class="person-info">
-            <xsl:apply-templates select="contact/phonenumber"/>
-            <xsl:apply-templates select="contact/email"/>
-            <xsl:apply-templates select="contact/website"/>
-            <xsl:apply-templates select="address"/>
-            <xsl:apply-templates select="contact/other"/>
-            <xsl:apply-templates select="notes"/>
+        <div class="person-background">
+      <table cellspacing="10">
+        <tr>
+            <td class="rowname"> Phone</td>
+            <td><xsl:apply-templates select="contact/phonenumber"/></td>
+        </tr>
+        <tr>
+            <td class="rowname">Email</td>
+            <td><xsl:apply-templates select="contact/email"/></td>
+        </tr>
+        <tr>
+            <td class="rowname">Website</td>
+            <td><xsl:apply-templates select="contact/website"/></td>
+        </tr>
+        <tr>
+            <td class="rowname">Address</td>
+            <td><xsl:apply-templates select="address"/></td>
+        </tr>
+        <tr>
+            <td class="rowname">Other</td>
+            <td><xsl:apply-templates select="contact/other"/></td>
+        </tr>
+        <tr>
+            <td class="rowname">Notes</td>
+            <td><xsl:apply-templates select="notes"/></td>
+        </tr>         
+         </table>
         </div>
     </xsl:template>
 
     <xsl:template match="name">
-        <h3><span class="person-name">
+        <h2><span class="person-background">
         <xsl:value-of select="lastname"/>
         <xsl:text> </xsl:text>
         <xsl:value-of select="middlename"/>
         <xsl:text> </xsl:text>
         <xsl:value-of select="firstname"/>
         </span>
-        </h3>
+        </h2>
     </xsl:template>
 
     <xsl:template match="contact/phonenumber">
-        <xsl:text>Phone </xsl:text>
-        <xsl:value-of select="text()"/>
-        <xsl:if test="@type = (@*)">
-            <xsl:text> (</xsl:text>
-            <xsl:value-of select="@type"/>
-            <xsl:text>)</xsl:text>
-        </xsl:if>
+            <xsl:value-of select="text()"/>
+            <xsl:if test="@type = (@*)">
+                <xsl:text> (</xsl:text>
+                <xsl:value-of select="@type"/>
+                <xsl:text>)</xsl:text>
+            </xsl:if>
         <br />
     </xsl:template>
 
     <xsl:template match="contact/email">
-        <xsl:text>Email </xsl:text>
         <a href="mailto:{//email}">
             <xsl:value-of select="//email"/>
         </a>
@@ -94,7 +148,6 @@
     </xsl:template>
 
    <xsl:template match="contact/website">
-        <xsl:text>Website </xsl:text>
         <a>
             <xsl:attribute name="href"><xsl:value-of select="text()"/></xsl:attribute>
             <xsl:value-of select="text()"/>
@@ -103,7 +156,6 @@
     </xsl:template>
 
     <xsl:template match="address">
-        <xsl:text>Address </xsl:text>
         <xsl:value-of select="street"/>
         <xsl:text> </xsl:text>
         <xsl:value-of select="doornumber"/>
@@ -117,17 +169,15 @@
     </xsl:template>
 
     <xsl:template match="contact/other">
-        <xsl:text>Other </xsl:text>
-        <xsl:value-of select="nameofservice/text()"/>
+        <i><xsl:value-of select="nameofservice/text()"/></i>
         <xsl:text> :: </xsl:text>
         <xsl:value-of select="userid/text()"/>
         <br />
     </xsl:template>
 
     <xsl:template match="notes">
-        <xsl:text>Notes </xsl:text>
         <xsl:value-of select="text()"/>
         <br />
     </xsl:template>
-    
+
 </xsl:transform>
