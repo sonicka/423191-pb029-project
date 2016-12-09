@@ -1,30 +1,4 @@
-<adressbook>
-</adressbook>
-
-<!--
-<adressbook>
-<person>
-    <name>
-        <firstname></firstname>
-        <middlename></middlename>
-        <lastname></lastname>
-    </name>
-    <contact>
-        <email></email>
-        <phonenumber></phonenumber>
-        <website></website>
-        <other>
-            <nameofservice></nameofservice>
-            <userid></userid>
-        </other>
-    </contact>
-    <adress>
-        <street></street>
-        <doornumber></doornumber>
-        <postalnumber></postalnumber>
-        <city></city>
-        <state></state>
-    </adress>
-    <notes></notes>
-</person>
-</adressbook> -->
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="addressbook-to-html.xsl"?>
+<addressbook title="addressbook" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="address-book.xsd">
+</addressbook>

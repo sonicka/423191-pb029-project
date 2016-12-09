@@ -74,7 +74,7 @@
             </head>
             <body>
                 <div id="head">
-                    <h1>Address Book</h1>
+                    <h1>ADDRESS BOOK</h1>
                 </div>
                 <div id="content">
                     <div id="text">
@@ -131,7 +131,7 @@
     </xsl:template>
 
     <xsl:template match="contact/phonenumber">
-            <xsl:value-of select="text()"/>
+        <xsl:value-of select="text()"/>
             <xsl:if test="@type = (@*)">
                 <xsl:text> (</xsl:text>
                 <xsl:value-of select="@type"/>
@@ -142,7 +142,7 @@
 
     <xsl:template match="contact/email">
         <a href="mailto:{//email}">
-            <xsl:value-of select="//email"/>
+            <xsl:value-of select="text()"/>
         </a>
         <br />
     </xsl:template>
@@ -169,9 +169,9 @@
     </xsl:template>
 
     <xsl:template match="contact/other">
-        <i><xsl:value-of select="nameofservice/text()"/></i>
+        <xsl:value-of select="nameofservice"/>
         <xsl:text> :: </xsl:text>
-        <xsl:value-of select="userid/text()"/>
+        <xsl:value-of select="userid"/>
         <br />
     </xsl:template>
 
