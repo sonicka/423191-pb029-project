@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="addressbook" type="addressbookType"/>
+
   <xs:complexType name="nameType">
     <xs:sequence>
       <xs:element name="firstname" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -8,6 +9,7 @@
       <xs:element name="lastname" type="xs:string" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="addressType">
     <xs:sequence>
       <xs:element name="street" type="xs:string" minOccurs="1" maxOccurs="1"/>
@@ -17,29 +19,32 @@
       <xs:element name="state" type="xs:string" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="contactType">
     <xs:sequence>
       <xs:element name="email" type="emailType" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="phonenumber" type="phoneNumberType" minOccurs="0" maxOccurs="unbounded"/>
-
       <xs:element name="website" type="xs:anyURI" minOccurs="0" maxOccurs="4"/>
       <xs:element name="other" type="otherType" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="personType">
     <xs:sequence>
       <xs:element name="name" type="nameType" minOccurs="1" maxOccurs="1"/>
       <xs:element name="contact" type="contactType" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="address" type="addressType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="notes" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="address" type="addressType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="notes" type="xs:string" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="otherType">
     <xs:sequence>
       <xs:element name="nameofservice" type="xs:string" minOccurs="1" maxOccurs="1"/>
       <xs:element name="userid" type="xs:string" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
+
   <xs:complexType name="addressbookType">
     <xs:sequence>
       <xs:element name="person" type="personType" minOccurs="0" maxOccurs="unbounded"/>

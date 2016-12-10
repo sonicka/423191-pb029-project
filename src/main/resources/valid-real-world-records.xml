@@ -4,7 +4,6 @@
     <person>
         <name>
             <firstname>Emrick</firstname>
-            <middlename></middlename>
             <lastname>Hamlin</lastname>
         </name>
         <contact>
@@ -23,31 +22,16 @@
             <city>New York</city>
             <state>US</state>
         </address>
-        <notes></notes>
     </person>
 
     <person>
         <name>
             <firstname>Malka</firstname>
-            <middlename></middlename>
             <lastname>Plumb</lastname>
         </name>
         <contact>
-            <email></email>
             <phonenumber>+5553774253</phonenumber>
-            <website></website>
-            <other>
-                <nameofservice></nameofservice>
-                <userid></userid>
-            </other>
         </contact>
-        <address>
-            <street></street>
-            <doornumber></doornumber>
-            <postalnumber></postalnumber>
-            <city></city>
-            <state></state>
-        </address>
         <notes>Burrow under covers eats owners hair then claws head, missing until dinner time plays league of legends and kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff give attitude, for rub whiskers on bare skin act innocent. Have secret plans eat and than sleep on your face, yet claws in your leg. Missing until dinner time. Asdflkjaertvlkjasntvkjn (sits on keyboard) man running from cops stops to pet cats, goes to jail. Cats making all the muffins. </notes>
     </person>
 
@@ -62,7 +46,6 @@
             <phonenumber type="work">8488811</phonenumber>
             <phonenumber type="personal">+5554569874</phonenumber>
             <phonenumber>+5553211479</phonenumber>
-            <website></website>
             <other>
                 <nameofservice>ICQ</nameofservice>
                 <userid>632489025</userid>
@@ -75,50 +58,38 @@
             <city>Seattle</city>
             <state>United States</state>
         </address>
-        <notes></notes>
     </person>
 
     <person>
         <name>
             <firstname>Shah </firstname>
-            <middlename></middlename>
             <lastname>Watkins</lastname>
         </name>
         <contact>
             <email>shah_wa@toodles.com</email>
             <email>shahahah@gmail.com</email>
             <email>watkinss@yahoo.com</email>
-            <phonenumber></phonenumber>
             <website>haha.com</website>
             <website>hehe.com</website>
-            <other>
-                <nameofservice></nameofservice>
-                <userid></userid>
-            </other>
         </contact>
-        <address>
-            <street></street>
-            <doornumber></doornumber>
-            <postalnumber></postalnumber>
-            <city></city>
-            <state></state>
-        </address>
         <notes>Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit.</notes>
     </person>
 
     <person>
         <name>
             <firstname>Reinhard</firstname>
-            <middlenameGreen></middlenameGreen>
+            <middlename>Green</middlename>
             <lastname>Hibbard</lastname>
         </name>
         <contact>
-            <email></email>
             <phonenumber type="personal">9014669746</phonenumber>
-            <website></website>
             <other>
                 <nameofservice>Skype</nameofservice>
                 <userid>hibbi</userid>
+            </other>
+            <other>
+                <nameofservice>ICQ</nameofservice>
+                <userid>160258943</userid>
             </other>
         </contact>
         <address>

@@ -92,28 +92,40 @@
         <div class="person-background">
       <table cellspacing="10">
         <tr>
-            <td class="rowname"> Phone</td>
-            <td><xsl:apply-templates select="contact/phonenumber"/></td>
+            <xsl:if test="contact/phonenumber">
+                <td class="rowname">Phone</td>
+                <td><xsl:apply-templates select="contact/phonenumber"/></td>
+            </xsl:if>
         </tr>
         <tr>
-            <td class="rowname">Email</td>
-            <td><xsl:apply-templates select="contact/email"/></td>
+            <xsl:if test="contact/email">
+                <td class="rowname">Email</td>
+                <td><xsl:apply-templates select="contact/email"/></td>
+            </xsl:if>
         </tr>
         <tr>
-            <td class="rowname">Website</td>
-            <td><xsl:apply-templates select="contact/website"/></td>
+            <xsl:if test="contact/website">
+                <td class="rowname">Website</td>
+                <td><xsl:apply-templates select="contact/website"/></td>
+            </xsl:if>
         </tr>
         <tr>
-            <td class="rowname">Address</td>
-            <td><xsl:apply-templates select="address"/></td>
+            <xsl:if test="address">
+                <td class="rowname">Address</td>
+                <td><xsl:apply-templates select="address"/></td>
+            </xsl:if>
         </tr>
         <tr>
-            <td class="rowname">Other</td>
-            <td><xsl:apply-templates select="contact/other"/></td>
+            <xsl:if test="contact/other">
+                <td class="rowname">Other</td>
+                <td><xsl:apply-templates select="contact/other"/></td>
+            </xsl:if>
         </tr>
         <tr>
-            <td class="rowname">Notes</td>
-            <td><xsl:apply-templates select="notes"/></td>
+            <xsl:if test="notes">
+                <td class="rowname">Notes</td>
+                <td><xsl:apply-templates select="notes"/></td>
+            </xsl:if>
         </tr>         
          </table>
         </div>
