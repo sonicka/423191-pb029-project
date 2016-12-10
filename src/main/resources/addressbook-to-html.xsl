@@ -44,11 +44,6 @@
                         a:hover {
                             color: #1BBEC5;
                         }
-
-                        .person-name {
-                            background-color: #E6E1CF;
-                            color: #000000;
-                        }
                         .person-background {
                             padding: 0.5em 0.3em 0.3em 0.5em;
                             background-color: #FFFFFF;
@@ -149,14 +144,14 @@
                 <xsl:value-of select="@type"/>
                 <xsl:text>)</xsl:text>
             </xsl:if>
-        <br />
+        <br/>
     </xsl:template>
 
     <xsl:template match="contact/email">
         <a href="mailto:{//email}">
             <xsl:value-of select="text()"/>
         </a>
-        <br />
+        <br/>
     </xsl:template>
 
    <xsl:template match="contact/website">
@@ -164,7 +159,7 @@
             <xsl:attribute name="href"><xsl:value-of select="text()"/></xsl:attribute>
             <xsl:value-of select="text()"/>
         </a>
-        <br />
+        <br/>
     </xsl:template>
 
     <xsl:template match="address">
@@ -177,19 +172,17 @@
         <xsl:value-of select="city"/>
         <xsl:text>, </xsl:text>
         <xsl:value-of select="state"/>
-        <br />
     </xsl:template>
 
     <xsl:template match="contact/other">
         <xsl:value-of select="nameofservice"/>
         <xsl:text> :: </xsl:text>
         <xsl:value-of select="userid"/>
-        <br />
+        <br/>
     </xsl:template>
 
     <xsl:template match="notes">
         <xsl:value-of select="text()"/>
-        <br />
     </xsl:template>
 
 </xsl:transform>
